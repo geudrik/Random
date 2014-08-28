@@ -16,6 +16,10 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with Baku.  If not, see <http://www.gnu.org/licenses/>.
+#
+#       Description: See http://php.net/manual/en/function.print-r.php for a crash-course
+#       This code attempts to print in nice, human-readable format Lists and Dictionaries
+#               
 
 
 def print_r(haystack, depth = 0, inline = False, inline_key = 0, inline_max_key = 0): 
