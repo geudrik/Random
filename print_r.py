@@ -1,6 +1,6 @@
 #! /usr/bin/env python2.7
 #
-# Author: Pat Litke (C) 2014
+# Author: Pat Litke (C) 2013
 #
 # This file is not part of any application. Please use it and adapt it as necessary
 #
