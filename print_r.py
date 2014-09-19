@@ -44,31 +44,31 @@ def print_r(haystack, depth = 0, inline = False, inline_key = 0, inline_max_key 
 
         ## Dictionary
         #       Returns a tuple for each row. Break it up into keypair and do magic with it
-        if isinstance(haystack, dict):
-    
-                # How many keys are we working with?
-                if len(haystack) <= 0:
-                        max_key = 0 
-                else:
-                        max_key = max(len(k) for k in haystack.iterkeys())
-                    
-                # Traverse (at only the "top" level) the dictionary
-                for count, keyValue in enumerate(haystack.iteritems()):
-                            
-                        # Split our tuple up into a key and a value
-                        key, value = keyValue
+	if isinstance(haystack, dict):
+	
+		# How many keys are we working with?
+		if len(haystack) <= 0:
+			max_key = 0 
+		else:
+			max_key = max(len(str(k)) for k in haystack.iterkeys())
+			
+		# Traverse (at only the "top" level) the dictionary
+		for count, keyValue in enumerate(haystack.iteritems()):
+				
+			# Split our tuple up into a key and a value
+			key, value = keyValue
 
-                        # Basic logic from here out...
-                        if isinstance(value, dict) or isinstance(value, list):
-                                    
-                                print_r(value, depth+1, True, key, max_key)
+			# Basic logic from here out...
+			if isinstance(value, dict) or isinstance(value, list):
+					
+				print_r(value, depth+1, True, key, max_key)
 
-                        else:
+			else:
 
-                                print ("      "*(depth+1))+"["+str(key)+"] "+str(" "*(max_key-len(key)))+" =>      "+str(value)
+				print ("      "*(depth+1))+"["+str(key)+"] "+str(" "*(max_key-len(str(key))))+" =>      "+str(value)
 
-                # Print our closing bracket
-                print ("      "*(depth))+"}"
+		# Print our closing bracket
+		print ("      "*(depth))+"}"
     
     
             
